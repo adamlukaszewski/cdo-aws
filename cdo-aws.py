@@ -8,7 +8,7 @@ from tabulate import tabulate
 
 logger = logging.getLogger()
 logging.basicConfig()
-logger.setLevel(logging.INFO)
+# logger.setLevel(logging.INFO)
 
 # create the top-level parser
 parser = argparse.ArgumentParser()
@@ -22,7 +22,6 @@ parser_sqs = sub_parsers.add_parser(name=CMD_SQS, help='Operations for interacti
 parser_sqs_command = parser_sqs.add_subparsers(dest="operation", help='sub-sub-command help')
 
 CMD_SQS_CHECK: str = "check"
-print(CMD_SQS_CHECK)
 parser_sqs_command_check = parser_sqs_command.add_parser(name=CMD_SQS_CHECK, help='it is crazy sub-sub-command')
 parser_sqs_command_check.add_argument('-n', '--name', required=False, help='Name pattern of the queue')
 parser_sqs_command_check.add_argument('-c', '--columns', nargs='+', required=False, help="Columns to be displayed",
