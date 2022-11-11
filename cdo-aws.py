@@ -81,7 +81,7 @@ if args.command == CMD_SQS:
 
         if not output.empty:
             print(tabulate(output[list(dict.fromkeys(columns))], headers='keys', tablefmt='psql'))
-        else
+        else:
             print("There are not queues")
 
     else:
